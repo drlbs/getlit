@@ -16,30 +16,66 @@ void display(){
     // Bind the texture you want to use and draw the first polygon
 
     glBindTexture(GL_TEXTURE_2D, textureID[0]);
-    glPushMatrix();
-    glRotatef(90.0,0.0,1.0,0.0);
-    glTranslatef(0.0,-10.0,0.0);
     glBegin(GL_POLYGON);
 
-      glTexCoord2d( 0.0, 0.0);   glVertex2d(  0.0,  0.0 );
-      glTexCoord2d( 0.0, 1.0);   glVertex2d(  0.0, 10.0 );
-      glTexCoord2d( 1.0, 1.0);   glVertex2d( 10.0, 10.0 );
-      glTexCoord2d( 1.0, 0.0);   glVertex2d( 10.0,  0.0 );
+      glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 0.0 );
+      glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 0.0 );
+      glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 0.0 );
+      glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 0.0 );
 
     glEnd();
 
     // Bind the second you want to use and draw the first polygon
 
+/*
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
-    glPushMatrix();
-    glRotatef(90.0,1.0,0.0,0.0);
-    glTranslatef(0.0,-10.0,-10.0);
     glBegin(GL_POLYGON);
 
-      glTexCoord2d( 0.0, 0.0);   glVertex2d(  0.0,  0.0 );
-      glTexCoord2d( 0.0, 1.0);   glVertex2d(  0.0, 10.0 );
-      glTexCoord2d( 1.0, 1.0);   glVertex2d( 10.0, 10.0 );
-      glTexCoord2d( 1.0, 0.0);   glVertex2d( 10.0,  0.0 );
+      glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
+      glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
+      glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
+      glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
+
+    glEnd();
+*/
+
+    glBindTexture(GL_TEXTURE_2D, textureID[1]);
+    glBegin(GL_POLYGON);
+
+      glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0,  0.0 );
+      glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0,  0.0 );
+      glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
+      glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
+
+    glEnd();
+
+    glBindTexture(GL_TEXTURE_2D, textureID[1]);
+    glBegin(GL_POLYGON);
+
+      glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0,  0.0 );
+      glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0,  0.0 );
+      glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
+      glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
+
+    glEnd();
+
+    glBindTexture(GL_TEXTURE_2D, textureID[1]);
+    glBegin(GL_POLYGON);
+
+      glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0,  0.0 );
+      glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
+      glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
+      glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0,  0.0 );
+
+    glEnd();
+
+    glBindTexture(GL_TEXTURE_2D, textureID[1]);
+    glBegin(GL_POLYGON);
+
+      glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0, 10.0,  0.0 );
+      glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
+      glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
+      glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0, 10.0,  0.0 );
 
     glEnd();
 
@@ -54,13 +90,14 @@ void display(){
     glRotatef(90.0,0.0,1.0,0.0);
     glRotatef(-45.0,0.0,0.0,1.0);
 // The next line fixes the mirrored texture map
-//    glScalef(1.0,-1.0,1.0);
+    glScalef(1.0,-1.0,1.0);
     gluSphere( earth, 0.9, 36, 72);
     glPopMatrix();
 
     /// Trying add heads up display
 
     // Try some blending
+/*
     glEnable(GL_BLEND);
     glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
@@ -88,6 +125,8 @@ void display(){
     
 
     glDisable(GL_BLEND); 
+*/
+
     // Flush the buffer
     glFlush();
 
