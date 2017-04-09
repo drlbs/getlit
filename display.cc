@@ -18,6 +18,7 @@ void display(){
     glBindTexture(GL_TEXTURE_2D, textureID[0]);
     glBegin(GL_POLYGON);
 
+      glNormal3d(0,0,-1);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 0.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 0.0 );
@@ -27,21 +28,23 @@ void display(){
 
     // Bind the second you want to use and draw the first polygon
 
-/*
+
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
 
+      glNormal3d(0,0,1);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
 
     glEnd();
-*/
+
 
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
 
+      glNormal3d(-1,0,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0,  0.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
@@ -52,6 +55,7 @@ void display(){
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
 
+      glNormal3d(1,0,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0,  0.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
@@ -62,6 +66,7 @@ void display(){
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
 
+      glNormal3d(0,-1,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
@@ -72,6 +77,7 @@ void display(){
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
 
+      glNormal3d(0,1,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0, 10.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
@@ -81,6 +87,7 @@ void display(){
 
     glPopMatrix();
 
+/*
     // Bind the texture and draw the sphere
 
     glBindTexture ( GL_TEXTURE_2D, textureID[2]);
@@ -93,6 +100,8 @@ void display(){
     glScalef(1.0,-1.0,1.0);
     gluSphere( earth, 0.9, 36, 72);
     glPopMatrix();
+
+*/
 
     /// Trying add heads up display
 

@@ -8,6 +8,13 @@ GLUquadric *earth;
 
 void loadTextures();
 
+GLfloat material_diffuse[4];
+GLfloat material_ambient[4];
+GLfloat material_emission[4];
+GLfloat material_specular[4];
+
+GLfloat light_0_position[4];
+
 
 
 void myInit(){
@@ -22,8 +29,8 @@ void myInit(){
     glLoadIdentity();
     glClear (GL_COLOR_BUFFER_BIT);
 
-    gluLookAt(  20.0,   20.0,   20.0,  // Eye
-                0.0,   0.0, 0.0,  // Center
+    gluLookAt(  0.0,   0.0,   0.0,  // Eye
+                5.0,   5.0, 5.0,  // Center
                 0.0,   0.0, 1.0); // Up
 
 
@@ -35,6 +42,28 @@ void myInit(){
 
     earth = gluNewQuadric();
     gluQuadricTexture( earth, GL_TRUE);
+
+// Now start working on lighting
+
+   material_diffuse = { 1.0, 1.0, 1.0, 1.0 };
+   material_ambient = { 1.0, 1.0, 1.0, 1.0 };
+   material_emission = { 1.0, 0.0, 0.0, 1.0 };
+   material_specular = { 1.0, 1.0, 1.0, 1.0 };
+
+   light_0_position = { 10.0, 10.0, 10.0, 1.0 };
+
+   glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);
+   glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_ambient);
+   glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, material_emission);
+   glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);
+//   glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 25.0);
+
+   glLightfv(GL_LIGHT0, GL_POSITION, light_0_position);
+
+
+   glEnable(GL_LIGHTING);
+   glEnable(GL_LIGHT0);
+
 }
 
 
