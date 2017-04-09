@@ -12,79 +12,66 @@ void display(){
     glEnable(GL_DEPTH_TEST);
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-
-    // Bind the texture you want to use and draw the first polygon
+    // Bind textures and draw six sides of a cube
 
     glBindTexture(GL_TEXTURE_2D, textureID[0]);
     glBegin(GL_POLYGON);
-
       glNormal3d(0,0,-1);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 0.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 0.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 0.0 );
-
     glEnd();
-
-    // Bind the second you want to use and draw the first polygon
-
 
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
-
       glNormal3d(0,0,1);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
-
     glEnd();
-
 
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
-
       glNormal3d(-1,0,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0,  0.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
-
     glEnd();
 
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
-
       glNormal3d(1,0,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0,  0.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
-
     glEnd();
 
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
-
       glNormal3d(0,-1,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0,  0.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0,  0.0, 10.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0,  0.0, 10.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0,  0.0,  0.0 );
-
     glEnd();
 
     glBindTexture(GL_TEXTURE_2D, textureID[1]);
     glBegin(GL_POLYGON);
-
       glNormal3d(0,1,0);
       glTexCoord3d( 0.0, 0.0, 0.0);   glVertex3d(  0.0, 10.0,  0.0 );
       glTexCoord3d( 0.0, 1.0, 0.0);   glVertex3d(  0.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 1.0, 0.0);   glVertex3d( 10.0, 10.0, 10.0 );
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0, 10.0,  0.0 );
-
     glEnd();
 
+    glPushMatrix();
+    glTranslatef(light_0_position[0],light_0_position[1],light_0_position[2]); 
+    glutSolidSphere(1.0,20,20);
+    glPopMatrix();
     
 /*
     // Bind the texture and draw the sphere

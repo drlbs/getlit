@@ -56,7 +56,7 @@ void myInit(){
    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);
 //   glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 25.0);
 
-   light_0_position = { 10.0, 10.0, 10.0, 1.0 };
+   light_0_position = {  0.0,  0.0, 10.0, 1.0 };
 
    glLightfv(GL_LIGHT0, GL_POSITION, light_0_position);
 
