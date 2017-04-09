@@ -8,7 +8,7 @@ LDLIBS = -lGL -lGLU -lGLEW -lglut libSOIL.a
 all : lit 
 
 lit : main.o $(OBJS) $(HEADERS)
-	$(CC) $(OPT) main.o -o tex1 $(OBJS) $(LDLIBS)
+	$(CC) $(OPT) main.o -o lit $(OBJS) $(LDLIBS)
 
 main.o : main.cc globals.h
 	$(CC) $(OPT) main.cc -c

@@ -85,8 +85,7 @@ void display(){
 
     glEnd();
 
-    glPopMatrix();
-
+    
 /*
     // Bind the texture and draw the sphere
 

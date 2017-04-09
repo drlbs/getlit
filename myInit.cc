@@ -43,20 +43,20 @@ void myInit(){
     earth = gluNewQuadric();
     gluQuadricTexture( earth, GL_TRUE);
 
-// Now start working on lighting
+// Now start working on lighting -- these are material properties
 
    material_diffuse = { 1.0, 1.0, 1.0, 1.0 };
    material_ambient = { 1.0, 1.0, 1.0, 1.0 };
-   material_emission = { 1.0, 0.0, 0.0, 1.0 };
+   material_emission = { 1.0, 1.0, 1.0, 1.0 };
    material_specular = { 1.0, 1.0, 1.0, 1.0 };
-
-   light_0_position = { 10.0, 10.0, 10.0, 1.0 };
 
    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);
    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_ambient);
    glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, material_emission);
    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);
 //   glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 25.0);
+
+   light_0_position = { 10.0, 10.0, 10.0, 1.0 };
 
    glLightfv(GL_LIGHT0, GL_POSITION, light_0_position);
 

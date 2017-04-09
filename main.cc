@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH  );
     glutInitWindowSize (windowsize, windowsize); 
-    glutCreateWindow("Texture Example");
+    glutCreateWindow("Lighting Example");
     glewInit();
     myInit();
     glutReshapeFunc(reshape);
