@@ -14,7 +14,15 @@ GLfloat material_emission[4];
 GLfloat material_specular[4];
 
 GLfloat light_0_position[4];
-
+GLfloat light_0_ambient[4];
+GLfloat light_0_diffuse[4];
+GLfloat light_0_specular[4];
+GLfloat light_0_spot_direction[4];
+GLfloat light_0_spot_cutoff;
+GLfloat light_0_spot_exponent;
+GLfloat light_0_gl_constant_attenuation;
+GLfloat light_0_gl_linear_attenuation;
+GLfloat light_0_gl_quadratic_attenuation;
 
 
 void myInit(){
@@ -56,9 +64,12 @@ void myInit(){
    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);
 //   glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 25.0);
 
-   light_0_position = {  0.0,  0.0, 10.0, 1.0 };
-
+   light_0_position = {  5.0,  5.0,  0.0, 1.0 };
+   light_0_ambient =  {  1.0,  0.0,  0.0, 1.0 };
+   light_0_diffuse =  {  1.0,  0.0,  0.0, 1.0 };
    glLightfv(GL_LIGHT0, GL_POSITION, light_0_position);
+   glLightfv(GL_LIGHT0, GL_AMBIENT, light_0_ambient);
+   glLightfv(GL_LIGHT0, GL_DIFFUSE, light_0_diffuse);
 
 
    glEnable(GL_LIGHTING);
