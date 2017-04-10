@@ -74,7 +74,7 @@ void display(){
     glPopMatrix();
     
     glPushMatrix();
-    glTranslatef(light_1_position[0],light_0_position[1],light_0_position[2]); 
+    glTranslatef(light_1_position[0],light_1_position[1],light_1_position[2]); 
     glutSolidSphere(0.5,20,20);
     glPopMatrix();
 /*
