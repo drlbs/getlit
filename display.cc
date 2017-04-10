@@ -68,15 +68,6 @@ void display(){
       glTexCoord3d( 1.0, 0.0, 0.0);   glVertex3d( 10.0, 10.0,  0.0 );
     glEnd();
 
-   material_ambient  = { 1.0, 0.0, 0.0, 1.0 };
-   material_diffuse  = { 1.0, 0.0, 0.0, 1.0 };
-   material_specular = { 1.0, 0.0, 0.0, 1.0 };
-   material_emission = { 1.0, 0.0, 0.0, 1.0 };
-
-   glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);
-   glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_ambient);
-   glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, material_emission);
-   glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);
     glPushMatrix();
     glTranslatef(light_0_position[0],light_0_position[1],light_0_position[2]); 
     glutSolidSphere(0.5,20,20);

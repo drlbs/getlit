@@ -54,10 +54,10 @@ void myInit(){
 // Now start working on lighting -- these are material properties
 
 
-   material_ambient  = { 1.0, 1.0, 1.0, 1.0 };
-   material_diffuse  = { 1.0, 1.0, 1.0, 1.0 };
-   material_specular = { 1.0, 1.0, 1.0, 1.0 };
-   material_emission = { 1.0, 1.0, 1.0, 1.0 };
+   material_ambient  = { 0.5, 0.5, 0.5, 1.0 };
+   material_diffuse  = { 0.2, 0.2, 0.2, 1.0 };
+   material_specular = { 0.2, 0.2, 0.2, 1.0 };
+   material_emission = { 0.2, 0.2, 0.2, 1.0 };
 
    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);
    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_ambient);
