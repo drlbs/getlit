@@ -31,15 +31,15 @@ void myInit(){
 
     glClearColor(0.0,0.0,0.0,0.0);
 
-// Set up a 3D Viewing perspective pulled back from the X-Y plane looking down
-// at the first quadrant.
+// Set up a 3D Viewing perspective pulled back to the bottom corner of  
+// the cube looking up to the middle of the cube.
 
     glLoadIdentity();
     glClear (GL_COLOR_BUFFER_BIT);
 
     gluLookAt(  0.0,   0.0,   0.0,  // Eye
-                5.0,   5.0, 5.0,  // Center
-                0.0,   0.0, 1.0); // Up
+                5.0,   5.0,   5.0,  // Center
+                0.0,   0.0,   1.0); // Up
 
 
 #ifdef DEBUG
@@ -53,10 +53,11 @@ void myInit(){
 
 // Now start working on lighting -- these are material properties
 
-   material_diffuse = { 1.0, 1.0, 1.0, 1.0 };
-   material_ambient = { 1.0, 1.0, 1.0, 1.0 };
-   material_emission = { 1.0, 1.0, 1.0, 1.0 };
+
+   material_ambient  = { 1.0, 1.0, 1.0, 1.0 };
+   material_diffuse  = { 1.0, 1.0, 1.0, 1.0 };
    material_specular = { 1.0, 1.0, 1.0, 1.0 };
+   material_emission = { 1.0, 1.0, 1.0, 1.0 };
 
    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);
    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_ambient);
@@ -64,12 +65,17 @@ void myInit(){
    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);
 //   glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 25.0);
 
-   light_0_position = {  5.0,  5.0,  0.0, 1.0 };
-   light_0_ambient =  {  1.0,  0.0,  0.0, 1.0 };
-   light_0_diffuse =  {  1.0,  0.0,  0.0, 1.0 };
+
+// These are light properties -- notice, specified for EACH light
+
+   light_0_position =  {  5.0,  5.0,  0.0, 1.0 };
+   light_0_ambient  =  {  1.0,  0.0,  0.0, 1.0 };
+   light_0_diffuse  =  {  1.0,  0.0,  0.0, 1.0 };
+   light_0_specular =  {  1.0,  0.0,  0.0, 1.0 };
    glLightfv(GL_LIGHT0, GL_POSITION, light_0_position);
    glLightfv(GL_LIGHT0, GL_AMBIENT, light_0_ambient);
    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_0_diffuse);
+   glLightfv(GL_LIGHT0, GL_SPECULAR, light_0_specular);
 
 
    glEnable(GL_LIGHTING);

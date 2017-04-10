@@ -1,6 +1,6 @@
 
 CC = g++ 
-OPT = -O2 
+OPT = -O2 -std=c++0x 
 OBJS = myInit.o loadTextures.o reshape.o display.o 
 HEADERS = SOIL.h sysincludes.h globals.h 
 LDLIBS = -lGL -lGLU -lGLEW -lglut libSOIL.a
@@ -14,7 +14,7 @@ main.o : main.cc globals.h
 	$(CC) $(OPT) main.cc -c
 
 myInit.o : myInit.cc globals.h
-	$(CC) $(OPT) -std=c++0x  myInit.cc -c 
+	$(CC) $(OPT) myInit.cc -c 
 
 loadTextures.o : loadTextures.cc globals.h 
 	$(CC) $(OPT) loadTextures.cc -c
