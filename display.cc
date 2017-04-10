@@ -78,6 +78,11 @@ void display(){
     glutSolidSphere(0.5,20,20);
     glPopMatrix();
 
+    glPushMatrix();
+    glTranslatef(light_2_position[0],light_2_position[1],light_2_position[2]); 
+    glutSolidSphere(0.5,20,20);
+    glPopMatrix();
+
     // Bind the texture and draw the sphere
 
     glBindTexture ( GL_TEXTURE_2D, textureID[2]);
@@ -132,6 +137,7 @@ void display(){
     // For completeness turn off these options
     glDisable(GL_DEPTH_TEST);
     glDisable(GL_TEXTURE_2D);
+    
 
 }
 
