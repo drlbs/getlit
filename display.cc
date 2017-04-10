@@ -77,12 +77,12 @@ void display(){
     glTranslatef(light_1_position[0],light_1_position[1],light_1_position[2]); 
     glutSolidSphere(0.5,20,20);
     glPopMatrix();
-/*
+
     // Bind the texture and draw the sphere
 
     glBindTexture ( GL_TEXTURE_2D, textureID[2]);
-    glTranslatef(-5.0,5.0,-5.0);
-    glScalef(5.0,5.0,5.0);
+    glTranslatef(5.0,5.0,5.0);
+    glScalef(1.0,1.0,1.0);
     glPushMatrix();
     glRotatef(90.0,0.0,1.0,0.0);
     glRotatef(-45.0,0.0,0.0,1.0);
@@ -91,7 +91,7 @@ void display(){
     gluSphere( earth, 0.9, 36, 72);
     glPopMatrix();
 
-*/
+
 
     /// Trying add heads up display
 
