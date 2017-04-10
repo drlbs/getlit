@@ -20,3 +20,13 @@ extern GLfloat light_0_gl_constant_attenuation;
 extern GLfloat light_0_gl_linear_attenuation;
 extern GLfloat light_0_gl_quadratic_attenuation;
 
+extern GLfloat light_1_position[4];
+extern GLfloat light_1_ambient[4];
+extern GLfloat light_1_diffuse[4];
+extern GLfloat light_1_specular[4];
+extern GLfloat light_1_spot_direction[4];
+extern GLfloat light_1_spot_cutoff;
+extern GLfloat light_1_spot_exponent;
+extern GLfloat light_1_gl_constant_attenuation;
+extern GLfloat light_1_gl_linear_attenuation;
+extern GLfloat light_1_gl_quadratic_attenuation;

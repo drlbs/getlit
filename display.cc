@@ -73,6 +73,10 @@ void display(){
     glutSolidSphere(0.5,20,20);
     glPopMatrix();
     
+    glPushMatrix();
+    glTranslatef(light_1_position[0],light_0_position[1],light_0_position[2]); 
+    glutSolidSphere(0.5,20,20);
+    glPopMatrix();
 /*
     // Bind the texture and draw the sphere
 

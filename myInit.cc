@@ -24,6 +24,16 @@ GLfloat light_0_gl_constant_attenuation;
 GLfloat light_0_gl_linear_attenuation;
 GLfloat light_0_gl_quadratic_attenuation;
 
+GLfloat light_1_position[4];
+GLfloat light_1_ambient[4];
+GLfloat light_1_diffuse[4];
+GLfloat light_1_specular[4];
+GLfloat light_1_spot_direction[4];
+GLfloat light_1_spot_cutoff;
+GLfloat light_1_spot_exponent;
+GLfloat light_1_gl_constant_attenuation;
+GLfloat light_1_gl_linear_attenuation;
+GLfloat light_1_gl_quadratic_attenuation;
 
 void myInit(){
 
@@ -77,9 +87,20 @@ void myInit(){
    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_0_diffuse);
    glLightfv(GL_LIGHT0, GL_SPECULAR, light_0_specular);
 
+// Lets set up a second light
+
+   light_1_position =  {  10.0,  5.0,  5.0, 1.0 };
+   light_1_ambient  =  {  0.0,  0.0,  1.0, 1.0 };
+   light_1_diffuse  =  {  0.0,  0.0,  1.0, 1.0 };
+   light_1_specular =  {  0.0,  0.0,  1.0, 1.0 };
+   glLightfv(GL_LIGHT0, GL_POSITION, light_1_position);
+   glLightfv(GL_LIGHT0, GL_AMBIENT, light_1_ambient);
+   glLightfv(GL_LIGHT0, GL_DIFFUSE, light_1_diffuse);
+   glLightfv(GL_LIGHT0, GL_SPECULAR, light_1_specular);
 
    glEnable(GL_LIGHTING);
    glEnable(GL_LIGHT0);
+   glEnable(GL_LIGHT1);
 
 }
 
