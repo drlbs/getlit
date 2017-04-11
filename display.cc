@@ -80,11 +80,12 @@ void display(){
 
     glPushMatrix();
     glTranslatef(light_2_position[0],light_2_position[1],light_2_position[2]); 
-    glutSolidSphere(0.5,20,20);
+    glutSolidCube(0.5);
     glPopMatrix();
 
-    // Bind the texture and draw the sphere
+    // Bind the texture and draw the sphere, oh, and make is shiny
 
+    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 100.0);
     glBindTexture ( GL_TEXTURE_2D, textureID[2]);
     glTranslatef(5.0,5.0,5.0);
     glScalef(1.0,1.0,1.0);

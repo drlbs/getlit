@@ -3,6 +3,7 @@
 extern GLuint textureID[3];
 extern GLUquadric *earth;
 
+extern GLfloat global_ambient[4];
 extern GLfloat material_diffuse[4];
 extern GLfloat material_ambient[4];
 extern GLfloat material_emission[4];

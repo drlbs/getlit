@@ -8,6 +8,8 @@ GLUquadric *earth;
 
 void loadTextures();
 
+GLfloat global_ambient[4];
+
 GLfloat material_diffuse[4];
 GLfloat material_ambient[4];
 GLfloat material_emission[4];
@@ -72,8 +74,12 @@ void myInit(){
     earth = gluNewQuadric();
     gluQuadricTexture( earth, GL_TRUE);
 
-// Now start working on lighting -- these are material properties
+// Now start working on lighting -- turn on some global settings
+   global_ambient = { 0.5f, 0.5f, 0.5f, 1.0f };
+   glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient);
+   glShadeModel(GL_SMOOTH);
 
+// these are material properties
 
    material_ambient  = { 0.5, 0.5, 0.5, 1.0 };
    material_diffuse  = { 0.2, 0.2, 0.2, 1.0 };
@@ -111,14 +117,14 @@ void myInit(){
 
 // And now its time for a spotlight
 
-   light_2_position =  {  5.0,  0.0,  5.0, 1.0 };
+   light_2_position =  {  5.0,  3.0,  5.0, 1.0 };
    light_2_ambient  =  {  1.0,  1.0,  1.0, 1.0 };
    light_2_diffuse  =  {  1.0,  1.0,  1.0, 1.0 };
    light_2_specular =  {  1.0,  1.0,  1.0, 1.0 };
    light_2_spot_direction = { 0.0, 1.0, 0.0 };
-   light_2_spot_cutoff = 60.0;
+   light_2_spot_cutoff = 10.0;
    light_2_spot_exponent = 64;
-   light_2_gl_linear_attenuation = .2;
+   light_2_gl_linear_attenuation = .3;
 
    glLightfv(GL_LIGHT2, GL_POSITION, light_2_position);
    glLightfv(GL_LIGHT2, GL_AMBIENT, light_2_ambient);
